@@ -26,7 +26,6 @@ const Signup = () => {
         throw new Error(errorData.message || "Signup failed");
       }
 
-      // Trigger success toast
       toast.success("Signup successful! Please login.", {
         position: "top-right",
         autoClose: 3000,
