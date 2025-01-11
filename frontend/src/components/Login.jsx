@@ -47,11 +47,10 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-200 to-indigo-800 px-4">
-      <div className="bg-white shadow-xl rounded-lg p-8 max-w-md w-full space-y-6">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-200 to-indigo-800 px-4 sm:px-6 lg:px-8">
+      <div className="bg-white shadow-xl rounded-lg p-8 w-full max-w-md space-y-6">
         <div className="text-center">
-          
-          <h2 className="text-3xl font-bold text-gray-800">Welcome Back!</h2>
+          <h2 className="text-3xl sm:text-2xl font-bold text-gray-800">Welcome Back!</h2>
           <p className="text-gray-600">Login to your account</p>
         </div>
         <form className="space-y-6" onSubmit={handleSubmit}>
@@ -59,35 +58,29 @@ const Login = () => {
             <label htmlFor="email" className="block text-gray-700 font-medium">
               Email Address
             </label>
-            <div className="relative">
-              <input
-                type="email"
-                id="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter your email"
-                className="w-full px-4 py-2 mt-1 border rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                required
-              />
-              
-            </div>
+            <input
+              type="email"
+              id="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Enter your email"
+              className="w-full px-4 py-2 mt-1 border rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
+              required
+            />
           </div>
           <div>
             <label htmlFor="password" className="block text-gray-700 font-medium">
               Password
             </label>
-            <div className="relative">
-              <input
-                type="password"
-                id="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="Enter your password"
-                className="w-full px-4 py-2 mt-1 border rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                required
-              />
-              
-            </div>
+            <input
+              type="password"
+              id="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Enter your password"
+              className="w-full px-4 py-2 mt-1 border rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
+              required
+            />
           </div>
           {error && (
             <div className="text-red-500 text-sm text-center mt-2">{error}</div>
@@ -99,7 +92,7 @@ const Login = () => {
                 id="remember"
                 className="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
               />
-              <label htmlFor="remember" className="ml-2 block text-gray-800 text-sm">
+              <label htmlFor="remember" className="ml-2 text-gray-800 text-sm">
                 Remember me
               </label>
             </div>
