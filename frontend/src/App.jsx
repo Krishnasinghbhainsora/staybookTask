@@ -14,7 +14,7 @@ function App() {
       <BrowserRouter>
     
       <ToastContainer position="top-right" autoClose={3000} />
-        <div className="flex items-center justify-center min-h-screen bg-gray-100">
+        
           <Routes>
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
@@ -28,7 +28,6 @@ function App() {
             />
             <Route path="/" element={<Navigate to="/dashboard" replace />} />
           </Routes>
-        </div>
       </BrowserRouter>
     </AuthProvider>
   );
