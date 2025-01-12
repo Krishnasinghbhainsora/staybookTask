@@ -13,7 +13,7 @@ function TaskForm({ onAddTask }) {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
-      <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-4">Add New Task</h3>
+      <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-4 text-center newTitle">Add New Task</h3>
       <div className="flex flex-col sm:flex-row gap-2">
         <input
           type="text"
