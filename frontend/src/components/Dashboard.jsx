@@ -71,7 +71,7 @@ function Dashboard() {
         throw new Error(errorData.message || 'Failed to update task');
       }
       await fetchTasks();
-      toast.success('Task updated successfully!');
+      toast.success('Task completed successfully!');
     } catch (error) {
       toast.error(error.message || 'Failed to update task.');
     }
