@@ -66,16 +66,25 @@ function Dashboard() {
         },
         body: JSON.stringify(updates),
       });
+  
       if (!response.ok) {
         const errorData = await response.json();
         throw new Error(errorData.message || 'Failed to update task');
       }
+  
       await fetchTasks();
-      toast.success('Task completed successfully!');
+  
+      // Check the status in updates and show the appropriate toast message
+      if (updates.status === "Completed") {
+        toast.success("Task Completed Successfully!");
+      } else {
+        toast.success("Task Updated successfully!");
+      }
     } catch (error) {
-      toast.error(error.message || 'Failed to update task.');
+      toast.error(error.message || "Failed to update task.");
     }
   };
+  
 
   const deleteTask = async (taskId) => {
     try {
