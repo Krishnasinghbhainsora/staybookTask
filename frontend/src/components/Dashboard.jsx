@@ -126,47 +126,54 @@ function Dashboard() {
   );
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="dashboard-container min-h-screen bg-gray-100">
       <ToastContainer />
-      {/* Navbar */}
-      <nav className="bg-indigo-600 text-white shadow-md">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <h1 className="text-2xl font-semibold">Collaborative To-Do App</h1>
+      
+      <header className="dashboard-header bg-purple-600 text-white shadow-md fixed top-0 left-0 right-0 z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+          <div className="flex justify-between items-center"> {/* Update is here */}
+            <h1 className="text-xl sm:text-2xl  font-bold title">Collaborative To-Do App</h1>
             <button
               onClick={() => {
                 logout();
                 toast.info('Logged out successfully!');
               }}
-              className="px-4 py-2 bg-indigo-700 hover:bg-indigo-800 rounded-md text-sm font-medium"
+              className="px-3 py-1 sm:px-4 sm:py-2 bg-white text-purple-700 rounded-md text-sm font-medium hover:bg-gray-100 transition-colors duration-200"
             >
               Logout
             </button>
           </div>
         </div>
-      </nav>
+      </header>
 
-      {/* Content Section */}
-      <main className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
-        <TaskForm onAddTask={addTask} />
-        <div className="mt-4">
-          <select
-            value={filter}
-            onChange={(e) => setFilter(e.target.value)}
-            className="w-full md:w-1/3 p-2 rounded-md border border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
-          >
-            <option value="All">All</option>
-            <option value="Pending">Pending</option>
-            <option value="Completed">Completed</option>
-          </select>
-        </div>
-        <div className="mt-6 bg-white shadow-sm rounded-md p-4">
-          <TaskList
-            tasks={filteredTasks}
-            onUpdateTask={updateTask}
-            onDeleteTask={deleteTask}
-            onShareTask={handleShareTask}
-          />
+      <main className="pt-20 sm:pt-24 pb-8 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-3xl mx-auto">
+          <div className="bg-white shadow-sm rounded-lg overflow-hidden">
+            <div className="p-4 sm:p-6">
+              <TaskForm onAddTask={addTask} />
+              
+              <div className="mt-6">
+                <select
+                  value={filter}
+                  onChange={(e) => setFilter(e.target.value)}
+                  className="w-full sm:w-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-purple-500 focus:border-purple-500"
+                >
+                  <option value="All">All Tasks</option>
+                  <option value="Pending">Pending</option>
+                  <option value="Completed">Completed</option>
+                </select>
+              </div>
+
+              <div className="mt-6">
+                <TaskList
+                  tasks={filteredTasks}
+                  onUpdateTask={updateTask}
+                  onDeleteTask={deleteTask}
+                  onShareTask={handleShareTask}
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </main>
 
@@ -184,3 +191,4 @@ function Dashboard() {
 }
 
 export default Dashboard;
+

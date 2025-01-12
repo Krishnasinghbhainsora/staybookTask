@@ -37,7 +37,6 @@ const Signup = () => {
     } catch (err) {
       setError(err.message);
 
-      // Trigger error toast
       toast.error(err.message, {
         position: "top-right",
         autoClose: 3000,
@@ -46,10 +45,10 @@ const Signup = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-200 to-indigo-800 px-4 sm:px-6 lg:px-8">
+    <div className="h-screen w-full flex items-center justify-center bg-gradient-to-br from-blue-300 via-purple-300 to-purple-600 px-4 sm:px-6 lg:px-8">
       <div className="bg-white shadow-xl rounded-lg p-8 w-full max-w-md space-y-6">
         <div className="text-center">
-          <h2 className="text-3xl sm:text-2xl font-bold text-gray-800">
+          <h2 className="text-3xl font-bold text-gray-800">
             Create Account
           </h2>
           <p className="text-gray-600">Sign up to get started</p>
@@ -125,3 +124,4 @@ const Signup = () => {
 };
 
 export default Signup;
+

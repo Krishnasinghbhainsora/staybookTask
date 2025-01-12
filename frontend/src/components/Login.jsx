@@ -28,7 +28,6 @@ const Login = () => {
       const data = await response.json();
       login(data.token);
 
-      // Trigger success toast
       toast.success("Login successful!", {
         position: "top-right",
         autoClose: 3000,
@@ -38,7 +37,6 @@ const Login = () => {
     } catch (err) {
       setError("Invalid email or password");
 
-      // Trigger error toast
       toast.error("Login failed. Please check your credentials.", {
         position: "top-right",
         autoClose: 3000,
@@ -47,10 +45,10 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-200 to-indigo-800 px-4 sm:px-6 lg:px-8">
+    <div className="h-screen w-full flex items-center justify-center bg-gradient-to-br from-blue-300 via-purple-300 to-purple-600 px-4 sm:px-6 lg:px-8">
       <div className="bg-white shadow-xl rounded-lg p-8 w-full max-w-md space-y-6">
         <div className="text-center">
-          <h2 className="text-3xl sm:text-2xl font-bold text-gray-800">Welcome Back!</h2>
+          <h2 className="text-3xl font-bold text-gray-800">Welcome Back!</h2>
           <p className="text-gray-600">Login to your account</p>
         </div>
         <form className="space-y-6" onSubmit={handleSubmit}>
@@ -111,7 +109,7 @@ const Login = () => {
           </button>
         </form>
         <p className="text-sm text-center text-gray-600">
-          Don’t have an account?{" "}
+          Don't have an account?{" "}
           <a
             href="/signup"
             className="text-blue-500 hover:underline focus:outline-none"

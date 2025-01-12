@@ -26,29 +26,29 @@ function ShareTaskModal({ isOpen, onClose, onShare }) {
 
   return (
     <div
-      className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 p-4"
       aria-labelledby="modal-title"
       role="dialog"
       aria-modal="true"
     >
       <div className="bg-white rounded-lg shadow-xl w-full max-w-md">
-        <div className="p-4">
+        <div className="p-6">
           <h3
             id="modal-title"
-            className="text-lg font-medium text-gray-800 mb-4"
+            className="text-lg font-medium text-gray-900 mb-4"
           >
             Share Task
           </h3>
           {error && (
-            <p className="text-red-500 text-sm mb-2">{error}</p>
+            <p className="text-red-500 text-sm mb-4">{error}</p>
           )}
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} className="space-y-4">
             <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter email address"
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500 mb-4"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-purple-500 focus:border-purple-500"
               required
             />
             <div className="flex justify-end space-x-2">
@@ -56,14 +56,14 @@ function ShareTaskModal({ isOpen, onClose, onShare }) {
                 type="button"
                 onClick={onClose}
                 disabled={isSharing}
-                className="px-4 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300"
+                className="px-4 py-2 bg-gray-100 text-gray-700 rounded-md hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 transition-colors duration-200"
               >
                 Cancel
               </button>
               <button
                 type="submit"
                 disabled={isSharing}
-                className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700"
+                className="px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 transition-colors duration-200"
               >
                 {isSharing ? "Sharing..." : "Share"}
               </button>
