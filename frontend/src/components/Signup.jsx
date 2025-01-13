@@ -15,7 +15,7 @@ const Signup = () => {
 
     try {
       const response = await fetch(
-        "https://staybooktask-backend.onrender.com/api/auth/signup",
+        "https://staybooktask.onrender.com/api/auth/signup",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
