@@ -6,7 +6,7 @@ import TaskList from './TaskList';
 import TaskForm from './TaskForm';
 import ShareTaskModal from './ShareTaskModal';
 
-const API_BASE_URL = 'https://staybook-task-nu.vercel.app/api';
+const API_BASE_URL = 'https://staybooktask-backend.onrender.com/api';
 
 function Dashboard() {
   const [tasks, setTasks] = useState([]);
